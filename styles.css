@@ -4,13 +4,13 @@
 }
 
 * {
-  -webkit-box-sizing: border-box; 
-  -moz-box-sizing: border-box; 
-  box-sizing: border-box; 
-  -webkit-font-smoothing: antialiased; 
-  -moz-osx-font-smoothing: grayscale; 
-  text-rendering: optimizeLegibility; 
-} 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 
 html,
 body {
@@ -19,7 +19,7 @@ body {
   box-sizing: border-box; /* Ensures the border is part of the body's dimensions */
 }
 body {
-  font-family: 'Old Standard TT','Times New Roman', Times, serif;
+  font-family: 'Old Standard TT', 'Times New Roman', Times, serif;
   font-size: 24px;
   line-height: 1.25;
   letter-spacing: -2px;
@@ -47,7 +47,7 @@ h1 {
 
 .circle {
   margin: 15px auto;
-   width: 250px; 
+  width: 250px;
   height: 60px;
   background: #d8a9fc;
   border-radius: 50%;
@@ -91,22 +91,19 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-
- 
 }
 
- div.buttons {
+div.buttons {
   width: fit-content;
-  height: fit-content; 
+  height: fit-content;
   justify-content: center;
   align-items: center;
   padding: 3px;
 
-  border: 3px solid #d8a9fc; 
-  border-radius: 20px; 
-  box-sizing: border-box; 
-}   
-
+  border: 3px solid #d8a9fc;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
 
 footer svg {
   margin: 0 30px 0 30px;
@@ -122,18 +119,17 @@ footer svg:focus {
 
 @media screen and (max-width: 400px) {
   .circle {
-    width: 150px; 
-    height: 50px; 
+    width: 150px;
+    height: 50px;
     font-size: 20px;
   }
 }
 
- @media screen and (max-width: 650px){
-
-    footer svg {
-      margin: 0 5px 0 5px;
-    }
- } 
+@media screen and (max-width: 650px) {
+  footer svg {
+    margin: 0 5px 0 5px;
+  }
+}
 
 @media screen and (max-height: 650px) {
   footer {
@@ -142,13 +138,12 @@ footer svg:focus {
   }
 
   footer svg {
-    margin: 0px 10px 0 10px; 
-
-  } 
+    margin: 0px 10px 0 10px;
+  }
 }
 
 @media screen and (max-width: 360px) {
-    footer svg {
+  footer svg {
     margin: 0 5px; /* Decrease spacing between icons */
     width: 20px; /* Scale down icon size */
     height: 20px; /* Scale down icon size */
