@@ -2,7 +2,142 @@
   font-family: 'happy-times-italic';
   src: url(assets/happy-times-italic.woff);
 }
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img,
+iframe {
+  vertical-align: bottom;
+  max-width: 100%;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -37,24 +172,40 @@ body {
   box-sizing: border-box; /* Includes border in the body's dimensions */
 }
 
+section {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  text-align: center;
+}
+
 h1 {
   font-family: 'happy-times-italic';
   font-weight: 500;
   font-style: italic;
   letter-spacing: 0px;
-  font-size: 4.8vmin;
+  font-size: clamp(24px, 4.8vmin, 48px);
+  white-space: nowrap;
 }
 
 .circle {
   margin: 15px auto;
-  width: 250px;
-  height: 60px;
+  /* width: 250px;
+  height: 60px; */
   background: #d8a9fc;
   border-radius: 50%;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   transition: background-color 0.2s;
+
+  padding: 10px 20px; /* Add padding around the text */
+  height: auto; /* Allow height to adjust based on content */
+  width: auto; /* Allow width to adjust based on content */
+  display: inline-flex; /* Shrink to fit content */
+  border-radius: 50%; /* Change to elliptical shape to maintain rounded look */
 }
 
 section div.quote {
@@ -63,15 +214,6 @@ section div.quote {
   display: inline-block;
   justify-content: space-around;
   align-items: center;
-}
-
-section {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-  text-align: center;
 }
 
 .author {
@@ -84,25 +226,49 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  margin-top: 20px;
   width: 100%;
-  padding: 40px;
+  margin-top: 20px;
+  padding: 20px;
 
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
-div.buttons {
+/* div.buttons {
   width: fit-content;
   height: fit-content;
-  justify-content: center;
   align-items: center;
   padding: 3px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
   border: 3px solid #d8a9fc;
   border-radius: 20px;
   box-sizing: border-box;
+} */
+
+div.buttons {
+  width: fit-content;
+  max-width: 90%; /* Prevent overflow */
+  height: auto;
+  padding: 5px 10px;
+  border: 3px solid #d8a9fc;
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap; /* Allow content to wrap if necessary */
+  justify-content: center;
+  margin: 0 auto; /* Center on smaller screens */
+  position: relative;
+}
+
+div.buttons * {
+  max-width: 100%; /* Ensure child elements don’t overflow */
 }
 
 footer svg {
@@ -123,29 +289,67 @@ footer svg:focus {
     height: 50px;
     font-size: 20px;
   }
-}
 
-@media screen and (max-width: 650px) {
-  footer svg {
-    margin: 0 5px 0 5px;
+  footer {
+    padding: 10px; /* Reduce padding for small screens */
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  div.buttons {
+    width: 100%; /* Use full width for smaller screens */
+    padding: 2px; /* Reduce padding */
+    border: 2px solid #d8a9fc; /* Thin border for smaller screens */
   }
 }
 
 @media screen and (max-height: 650px) {
   footer {
-    padding: 10px; /* Reduce padding on smaller screens */
+    padding: 10px;
     margin-top: 20px;
   }
 
-  footer svg {
+  .buttons svg {
     margin: 0px 10px 0 10px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  footer {
+    padding: 5px;
+  }
+
+  .buttons {
+    padding: 5px;
+    gap: 5px;
+    font-size: 0.8rem;
+    max-width: 80%;
+  }
+
+  .buttons svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-height: 400px) {
+  .buttons {
+    padding: 3px;
+    gap: 3px;
+    font-size: 0.7rem;
+  }
+
+  .buttons svg {
+    width: 20px;
+    height: 20px;
   }
 }
 
 @media screen and (max-width: 360px) {
   footer svg {
-    margin: 0 5px; /* Decrease spacing between icons */
-    width: 20px; /* Scale down icon size */
-    height: 20px; /* Scale down icon size */
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
   }
 }
