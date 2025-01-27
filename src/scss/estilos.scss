@@ -1,0 +1,198 @@
+@use './base.scss' as *;
+
+@font-face {
+  font-family: 'happy-times-italic';
+  src: url(/on-creativity-vite/happy-times-italic.woff);
+}
+
+html,
+body {
+  height: 100%; /* Ensures the body covers the full height of the viewport */
+  margin: 0; /* Removes any default margin */
+  box-sizing: border-box; /* Ensures the border is part of the body's dimensions */
+}
+body {
+  font-family: 'Old Standard TT', 'Times New Roman', Times, serif;
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -2px;
+
+  background-color: #fffce8;
+
+  color: #333333;
+  height: 100vh;
+  transition: border-color 0.2s;
+
+  margin: 0; /* Removes default browser margin */
+
+  border: 6px solid #d8a9fc; /* Creates the border */
+  border-radius: 20px; /* Rounds the corners */
+  box-sizing: border-box; /* Includes border in the body's dimensions */
+}
+
+section {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'happy-times-italic';
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0px;
+  font-size: clamp(24px, 4.8vmin, 48px);
+  white-space: nowrap;
+}
+
+.circle {
+  margin: 15px auto;
+  /* width: 250px;
+  height: 60px; */
+  background: #d8a9fc;
+  border-radius: 50%;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+
+  padding: 10px 20px; /* Add padding around the text */
+  height: auto; /* Allow height to adjust based on content */
+  width: auto; /* Allow width to adjust based on content */
+  display: inline-flex; /* Shrink to fit content */
+  border-radius: 50%; /* Change to elliptical shape to maintain rounded look */
+}
+
+section div.quote {
+  font-size: 6vmin;
+  width: 54vw;
+  display: inline-block;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.author {
+  font-weight: 700;
+  font-style: normal;
+  margin: 15px 0 0 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+div.buttons {
+  width: fit-content;
+  max-width: 90%; /* Prevent overflow */
+  height: auto;
+  padding: 5px 10px;
+  border: 3px solid #d8a9fc;
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap; /* Allow content to wrap if necessary */
+  justify-content: center;
+  margin: 0 auto; /* Center on smaller screens */
+  position: relative;
+}
+
+div.buttons * {
+  max-width: 100%; /* Ensure child elements don’t overflow */
+}
+
+footer svg {
+  margin: 0 30px 0 30px;
+  color: #d8a9fc;
+  cursor: pointer;
+  user-select: none; /* Prevents selection */
+  pointer-events: all; /* Ensures pointer events are handled */
+}
+
+footer svg:focus {
+  outline: none; /* Removes focus outline when clicked */
+}
+
+@media screen and (max-width: 400px) {
+  .circle {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  footer {
+    padding: 10px; /* Reduce padding for small screens */
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  div.buttons {
+    width: 100%; /* Use full width for smaller screens */
+    padding: 2px; /* Reduce padding */
+    border: 2px solid #d8a9fc; /* Thin border for smaller screens */
+  }
+}
+
+@media screen and (max-height: 650px) {
+  footer {
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  .buttons svg {
+    margin: 0px 10px 0 10px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  footer {
+    padding: 5px;
+  }
+
+  .buttons {
+    padding: 5px;
+    gap: 5px;
+    font-size: 0.8rem;
+    max-width: 80%;
+  }
+
+  .buttons svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-height: 400px) {
+  .buttons {
+    padding: 3px;
+    gap: 3px;
+    font-size: 0.7rem;
+  }
+
+  .buttons svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  footer svg {
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+  }
+}

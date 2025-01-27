@@ -1,17 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>"On creativity"</title>
-    <!-- <link rel="stylesheet" href="_base.css" /> -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/sitio.webmanifest" />
+    <!-- <link rel="canonical" href="https://enflujo.com" /> -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+
+    <title>On creativity</title>
+    <!-- <meta name="description" content="Descripción del sitio...." /> -->
+
+    <!-- OpenGraph -->
+    <meta property="og:locale" content="es_CO" />
+    <!-- <meta property="og:site_name" content="EnFlujo" /> -->
+    <meta property="og:type" content="website" />
   </head>
   <body>
     <main>
@@ -30,10 +41,6 @@
       </section>
 
       <footer>
-        <!-- <img src="prev.svg" class="prev" />
-      <img src="random.svg" class="random" />
-      <img src="next.svg" class="next" /> -->
-
         <div class="buttons">
           <svg class="prev" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g lip-path="url(#clip0_281_32760)">
@@ -121,8 +128,7 @@
           </svg>
         </div>
       </footer>
-
-      <script src="pages.js"></script>
     </main>
+    <script type="module" src="/src/programa.ts"></script>
   </body>
 </html>
